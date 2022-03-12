@@ -1,6 +1,6 @@
 pragma solidity 0.8.0;
 
-contract MELONA {
+contract POI {
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
@@ -28,7 +28,7 @@ contract MELONA {
         initial token holder
         symbol
     */
-    string public constant name = "Melona";
+    string public constant name = "POI";
     
     constructor(uint256 initialSupply) {
         // set total supply to initialSupply
@@ -50,7 +50,7 @@ contract MELONA {
     {
         // does this user have enough tokens to transfer?
         uint256 senderBalance = balances[msg.sender];
-        require(senderBalance >= amount, "Melona: transfer amount exceeds balance");
+        require(senderBalance >= amount, "POI: transfer amount exceeds balance");
 
         _transfer(msg.sender, to, amount);
         return true;
